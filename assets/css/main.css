@@ -3405,3 +3405,41 @@ body.is-touch .wrapper.style4 {
 				}
 
 		}
+
+/* Publications: entries with a TOC image.
+   Text on the left, image on the right, vertically centered; the entry grows
+   to fit the image so it never overlaps the divider lines. Stacks on phones. */
+
+	ul.alt li.pub-toc {
+		display: flex;
+		align-items: center;
+		gap: 1.5em;
+	}
+
+		ul.alt li.pub-toc .pub-text {
+			flex: 1 1 auto;
+			min-width: 0;
+		}
+
+		ul.alt li.pub-toc .image.right {
+			float: none;
+			order: 2;
+			flex: 0 0 auto;
+			max-width: 35%;
+			padding: 0;
+			top: 0;
+		}
+
+	@media screen and (max-width: 736px) {
+
+		ul.alt li.pub-toc {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+			ul.alt li.pub-toc .image.right {
+				max-width: 100%;
+				margin-top: 0.5em;
+			}
+
+	}
